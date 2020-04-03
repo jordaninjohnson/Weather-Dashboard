@@ -1,11 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
+
 <body>
-    
+    <!-- header -->
+    <section class="hero is-black">
+        <div class="hero-body">
+            <p class="title is-size-1 level-item">
+                Weather Dashboard
+            </p>
+        </div>
+    </section>
+
+    <!-- user input / display info -->
+    <section class="columns">
+        <div class="column is-one-quarter has-background-primary">
+            <!-- Search -->
+            <div class="field">
+                <label class="label is-size-3 has-text-white level-item">Search for a City:</label>
+                <div class="field-body">
+                    <div class="field"></div>
+                    <div class="control">
+                        <input id="cityInput" class="input" type="text" placeholder="Name of City">
+                    </div>
+                    <div class="field">
+                        <button id="addCity" class="button is-link">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <!-- div for city buttons -->
+            <div id="buttonsContainer"></div>
+        </div>
+
+        <!-- column for info -->
+        <div class="column has-background-info">
+
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        // Initial array of cities
+        var cities = [];
+
+        // Function for displaying movie data
+        function renderButtons() {
+
+            // Deleting the city buttons prior to adding new city buttons
+            // (this is necessary otherwise we will have repeat buttons)
+            $("#buttonsContainer").empty();
+
+            // Looping through the array of movies
+            for (var i = 0; i < cities.length; i++) {
+
+                // Then dynamicaly generating buttons for each city in the array.
+                var a = $("<button>");
+                // Adding a class
+                a.addClass("button is-medium is-fullwidth");
+                // Adding a data-attribute with a value of the cities at index i
+                a.attr("data-name", cities[i]);
+                // Providing the button's text with a value of the cities at index i
+                a.text(cities[i]);
+                // Adding the button to the HTML
+                $("#buttonsContainer").append(a);
+            }
+        }
+
+        // This function handles events where one button is clicked
+        $("#addCity").on("click", function (event) {
+            // event.preventDefault() prevents the form from trying to submit itself.
+            // We're using a form so that the user can hit enter instead of clicking the button if they want
+            event.preventDefault();
+
+            //if no text in input return nothing
+            if($("#cityInput").val() === ""){
+                return;
+            }
+
+            // This line will grab the text from the input box
+            var city = $("#cityInput").val().trim();
+            // The city from the textbox is then added to our array
+            cities.push(city);
+
+            // calling renderButtons which handles the processing of our cities array
+            renderButtons();
+        });
+
+        // Calling the renderButtons function at least once to display the initial list of cities
+        //renderButtons();
+    </script>
 </body>
+
 </html>
