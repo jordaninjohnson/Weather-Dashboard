@@ -3,7 +3,6 @@ var cities = [];
 
 // Function for displaying movie data
 function renderButtons() {
-
     // Deleting the city buttons prior to adding new city buttons
     // (this is necessary otherwise we will have repeat buttons)
     $("#buttonsContainer").empty();
