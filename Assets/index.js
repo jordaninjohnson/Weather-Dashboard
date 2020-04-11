@@ -57,7 +57,7 @@ function displayCityInfo() {
         method: "GET"
     }).then(function (response) {
         var date = new Date(response.dt * 1000).toLocaleDateString();
-        var icon = $("<img>").attr("src","http://openweathermap.org/img/w/" + response.weather[0].icon + ".png");
+        var icon = $("<img>").attr("src","https://openweathermap.org/img/w/" + response.weather[0].icon + ".png");
         //console.log(icon);
         //console.log(response);
         
