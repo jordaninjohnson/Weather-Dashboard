@@ -87,35 +87,35 @@ function displayCityInfo() {
         //console.log(response);
         //day1
         var date1 = new Date(response.list[3].dt * 1000).toLocaleDateString();
-        var icon1 = $("<img>").attr("src","http://openweathermap.org/img/w/" + response.list[3].weather[0].icon + ".png");
+        var icon1 = $("<img>").attr("src","https://openweathermap.org/img/w/" + response.list[3].weather[0].icon + ".png");
         $("#date1").html(date1);
         $("#icon1").html(icon1);
         $("#temp1").html("Temperature: " + response.list[3].main.temp + " °F");
         $("#humidity1").html("Humidity: " + response.list[3].main.humidity + " %");
         //day2
         var date2 = new Date(response.list[11].dt * 1000).toLocaleDateString();
-        var icon2 = $("<img>").attr("src","http://openweathermap.org/img/w/" + response.list[11].weather[0].icon + ".png");
+        var icon2 = $("<img>").attr("src","https://openweathermap.org/img/w/" + response.list[11].weather[0].icon + ".png");
         $("#date2").html(date2);
         $("#icon2").html(icon2);
         $("#temp2").html("Temperature: " + response.list[11].main.temp + " °F");
         $("#humidity2").html("Humidity: " + response.list[11].main.humidity + " %");
         //day3
         var date3 = new Date(response.list[19].dt * 1000).toLocaleDateString();
-        var icon3 = $("<img>").attr("src","http://openweathermap.org/img/w/" + response.list[19].weather[0].icon + ".png");
+        var icon3 = $("<img>").attr("src","https://openweathermap.org/img/w/" + response.list[19].weather[0].icon + ".png");
         $("#date3").html(date3);
         $("#icon3").html(icon3);
         $("#temp3").html("Temperature: " + response.list[19].main.temp + " °F");
         $("#humidity3").html("Humidity: " + response.list[19].main.humidity + " %");
         //day4
         var date4 = new Date(response.list[27].dt * 1000).toLocaleDateString();
-        var icon4 = $("<img>").attr("src","http://openweathermap.org/img/w/" + response.list[27].weather[0].icon + ".png");
+        var icon4 = $("<img>").attr("src","https://openweathermap.org/img/w/" + response.list[27].weather[0].icon + ".png");
         $("#date4").html(date4);
         $("#icon4").html(icon4);
         $("#temp4").html("Temperature: " + response.list[27].main.temp + " °F");
         $("#humidity4").html("Humidity: " + response.list[27].main.humidity + " %");
         //day5
         var date5 = new Date(response.list[35].dt * 1000).toLocaleDateString();
-        var icon5 = $("<img>").attr("src","http://openweathermap.org/img/w/" + response.list[35].weather[0].icon + ".png");
+        var icon5 = $("<img>").attr("src","https://openweathermap.org/img/w/" + response.list[35].weather[0].icon + ".png");
         $("#date5").html(date5);
         $("#icon5").html(icon5);
         $("#temp5").html("Temperature: " + response.list[35].main.temp + " °F");
